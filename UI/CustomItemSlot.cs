@@ -147,10 +147,13 @@ namespace CustomSlot.UI {
                         ItemChanged?.Invoke(this, new ItemChangedEventArgs(tempItem, Item));
                     }
                     else {
+                        if(Main.playerInventory) // check if inv is open or not so interaction with slot doesnt happen by accident
+                        {
                         ItemSlot.Handle(ref item, tempContext);
 
                         if(tempItem.type != Item.type)
                             ItemChanged?.Invoke(this, new ItemChangedEventArgs(tempItem, Item));
+                        }
                     }
 
                     if(!string.IsNullOrEmpty(HoverText)) {
