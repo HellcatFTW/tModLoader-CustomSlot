@@ -188,7 +188,11 @@ namespace CustomSlot.UI
                 }
             }
         }
-
+        public void SetPos(float X, float Y)
+        {
+            Left.Set(X, 0);
+            Top.Set(Y, 0);
+        }
         /// <summary>
         /// Set the item in the slot.
         /// </summary>
